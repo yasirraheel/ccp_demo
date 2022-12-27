@@ -12,6 +12,7 @@ import com.hbb20.CountryCodePicker;
 public class MainActivity extends AppCompatActivity {
     CountryCodePicker countryCodePicker;
     TextView textView;
+    Helper_class helper_class = new Helper_class();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 String CountryName = countryCodePicker.getSelectedCountryName();
                 String CountryCode = countryCodePicker.getSelectedCountryCode();
                 textView.setText("Selected Country is "+CountryName+" and Code is "+CountryCode);
+                helper_class.ShowToast(MainActivity.this,CountryCode);
             }
         });
 
